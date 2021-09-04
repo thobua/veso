@@ -1,0 +1,59 @@
+.body1{
+	
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+input{
+    width: 200px;
+    margin: 10px auto;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 50px;
+}
+button{
+    width: 200px;
+    margin: 10px auto;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 50px;
+}
+.background-img{
+	width: 1280px;
+	height: 1080px;
+}
+.centered1{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-180%, -50%);
+}
+.name1{
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: Courier;
+}
+.name2{
+    
+    font-size: 15px;
+    font-family: Courier;
+}
+.name3{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    color: black;
+    font-size: 50px;
+    font-family: Verdana;
+    
+}
+.khoitext{
+    display:block;
+}

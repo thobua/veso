@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Trung tâm xổ số kiến thiết XLC</title>
+    <style type="text/css">
+                .body1{
+            
+            position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        input{
+            width: 200px;
+            margin: 10px auto;
+            height: 30px;
+            padding: 0 10px;
+            border-radius: 50px;
+        }
+        button{
+            width: 200px;
+            margin: 10px auto;
+            height: 30px;
+            padding: 0 10px;
+            border-radius: 50px;}
+        .background-img{
+            width: 1280px;
+            height: 1080px;
+        }
+        .centered1{
+            position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-180%, -50%);
+        }
+        .name1{
+            margin-bottom: 5px;
+            padding-left: 10px;
+            font-size: 20px;
+            font-family: Courier;
+        }
+        .name2{
+            
+            font-size: 15px;
+            font-family: Courier;
+        }
+        .name3{
+            margin-top: 3px;
+            margin-bottom: 3px;
+            color: black;
+            font-size: 50px;
+            font-family: Verdana;
+
+            
+        }
+        .name4{
+            margin-top: 3px;
+            margin-bottom: 3px;
+            color: black;
+            font-size: 40px;
+            font-family: Verdana;
+            
+            
+        }
+        .khoitext{
+            text-align: left;
+            
+             position: absolute;
+          top: 275px;
+          margin-left: 25px;
+                  
+          
+          
+
+        }
+    </style>
+</head>
+<body style="background-image: url(background.jpg); width: 100%;" >   
+    <div id="data" class="">
+        <div class="centered" style="width: 916px; height: 495px;">
+            <img src="input1.png" class="centered">
+            <div class="khoitext" ><b>
+                <p id="text" class="name4" ></p>
+                <p id="text2" class="name3" ></p>
+            </b>
+            </div>
+        </div>
+    </div>
+
+    <div class="body1">
+        <div id="container">
+            <img src="input2.png" class="centered">
+            <div class="centered1">
+                <label class="name1"><b>Tên</b></label> <br/>
+                <input type="text" placeholder="Nhập tên" id="name"/><br/>
+                <label><b class="name1">Nhập số vé</b></label><br/>
+                <input type="number" placeholder="Nhập số vé" id="number"/><br/>
+                <button type="button" id="btn" onclick="SaveData();return;"><b class="name2">IN VÉ SỐ</b></button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function SaveData(){
+            const name = document.getElementById("name");
+            const number = document.getElementById("number");
+            console.log(name.value)
+            console.log(number.value)
+            if(name){
+                document.getElementById("container").style.display = "none";
+                document.getElementById("data").style.display = "block";
+                const text = document.getElementById("text");
+                const text2 = document.getElementById("text2");
+                text.innerHTML = name.value;
+                text2.innerHTML = number.value;
+                 //code khai bao discord
+                fetch("link dis", {
+                    method: 'post',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      // the username to be displayed
+                      username: 'webhook',
+                      // the avatar to be displayed
+                      avatar_url:
+                        'https://cdn.discordapp.com/avatars/411256446638882837/9a12fc7810795ded801fdb0401db0be6.png',
+                      // contents of the message to be sent
+                      content: `**Vé số của bạn là** `,
+                      embeds: [
+                          {
+                              title: "Mua bán vé số",
+                              description: `**Vé số:** ${number.value}\n**Tên:** ${name.value}`,
+                              timestamp: new Date(),
+                              footer: {
+                                  text: "chơi vé số uy tín"
+                              }
+                          }
+                      ],
+                    }),
+                }) 
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
+
