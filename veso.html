@@ -102,6 +102,8 @@
                 <input type="text" placeholder="Nhập tên" id="name"/><br/>
                 <label><b class="name1">Nhập số vé</b></label><br/>
                 <input type="number" placeholder="Nhập số vé" id="number"/><br/>
+                <label><b class="name1">Tên người bán</b></label><br/>
+                <input type="text" placeholder="Tên người bán" id="sellname"/><br/>
                 <button type="button" id="btn" onclick="SaveData();return;"><b class="name2">IN VÉ SỐ</b></button>
             </div>
         </div>
@@ -111,8 +113,10 @@
         function SaveData(){
             const name = document.getElementById("name");
             const number = document.getElementById("number");
+            const sellname = document,getElementById("sellname")
             console.log(name.value)
             console.log(number.value)
+            console.log(sellname.value)
             if(name){
                 document.getElementById("container").style.display = "none";
                 document.getElementById("data").style.display = "block";
@@ -137,7 +141,7 @@
                       embeds: [
                           {
                               title: "Mua bán vé số",
-                              description: `**Vé số:** ${number.value}\n**Tên:** ${name.value}`,
+                              description: `**Tên:** ${name.value}\n**Vé số:** ${number.value}\n**Người bán** ${sellname.value}`,
                               timestamp: new Date(),
                               footer: {
                                   text: "chơi vé số uy tín"
