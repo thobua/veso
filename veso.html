@@ -113,10 +113,8 @@
         function SaveData(){
             const name = document.getElementById("name");
             const number = document.getElementById("number");
-            const sellname = document,getElementById("sellname");
             console.log(name.value)
             console.log(number.value)
-            console.log(sellname.value)
             if(name){
                 document.getElementById("container").style.display = "none";
                 document.getElementById("data").style.display = "block";
@@ -141,7 +139,7 @@
                       embeds: [
                           {
                               title: "Mua bán vé số",
-                              description: `**Tên:** ${name.value}\n**Vé số:** ${number.value}\n**Người bán** ${sellname.value}`,
+                              description: `**Tên:** ${name.value}\n**Vé số:** ${number.value}`,
                               timestamp: new Date(),
                               footer: {
                                   text: "chơi vé số uy tín"
